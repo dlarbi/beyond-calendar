@@ -1,0 +1,195 @@
+@import './_colors';
+@import './_variables';
+
+
+// TODO: Define global font-faces, e.g.:
+// @font-face {
+//   font-family: 'Halcom';
+//   src: url('./fonts/The Northern Block Ltd - Halcom.otf');
+// }
+
+
+:global {
+
+  div [class*="left"] {
+    float: left;
+  }
+
+  div [class*="right"] {
+    float: right;
+  }
+
+  a {
+    color: $primary-green;
+    &:hover, &:focus {
+      color: $dark-green;
+    }
+  }
+
+  h1 {
+    color: $darkest-grey;
+    font-size: 44px;
+    font-family: Halcom;
+  }
+
+  h2 {
+    color: $darkest-grey;
+    font-size: 32px;
+    font-family: Halcom;
+  }
+
+  h3 {
+    font-family: Halcom;
+  }
+
+  h5 {
+    color: $darkest-grey;
+    letter-spacing: .5px;
+    font-family: Halcom-bold;
+    font-size: 14px;
+    margin-bottom: 8px!important;
+  }
+
+  h6 {
+    color: $darkest-grey;
+    font-family: Halcom;
+    font-size: 12px;
+    margin: 20px 0 10px 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    &.with-subheader {
+      margin-bottom: 3px;
+    }
+  }
+
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ui {
+    &.input {
+      width: 100%;
+    }
+    input[type="text"], input[type="password"], textarea {
+      border: 1px solid $light-grey;
+      width: 100%;
+      padding: 14px;
+      &:focus {
+        border: 1px solid $primary-green;
+        outline: none;
+      }
+    }
+  }
+
+  .ui.dropdown .menu.left {
+    // open menu to left since its on the right edge of the screen
+    // when semantic react is upgraded to 0.78.3+, can use 'direction' prop
+    // instead and remove this css block
+    right: 0;
+    left: auto;
+  }
+
+  .ui.dropdown .menu>* {
+    // allow items to wrap if needed
+    white-space: normal;
+  }
+
+  .ui.big.button {
+    font-size: 16px;
+    padding: 17px 50px;
+    font-family: Halcom-bold;
+  }
+
+  .ui.massive.button {
+    padding: 25px 30px;
+    font-size: 16px;
+    font-family: Halcom-bold;
+  }
+
+  .ui.primary.button, .ui.primary.buttons .button {
+    background-color: $primary-green!important;
+    &:hover, &:active {
+      background-color: darken($primary-green, 10)!important;
+    }
+    &:focus {
+      background-color: darken($primary-green, 7)!important;
+    }
+    a {
+      color: white;
+    }
+  }
+
+  .ui.button, .ui.buttons .button {
+  }
+
+  // Table overrides to get the benefits of using semantic tables, but with our
+  // own styles.
+
+  .ui.table {
+    border: none; // semantic surrounds the table with borders
+    color: $dark-grey-2; // all cell text, not quite black
+  }
+
+  .ui.table thead th, .ui.sortable.table thead th {
+    background-color: transparent; // semantic adds bg colors, remove them
+    color: $medium-grey-2;
+    font-size: $font-small;
+    border-left: none;
+    border-right: none;
+    font-family: halcom-light;
+  }
+
+  .ui.sortable.table thead th {
+
+    &:hover, &.sorted:hover {
+      color: $dark-grey;
+      background-color: transparent;
+    }
+
+    &.sorted {
+      color: $medium-grey-2;
+      background-color: transparent;
+
+      &:after {
+        color: #000; // arrow always stays black
+      }
+    }
+  }
+
+  .ui.table tbody tr td {
+    font-size: $font-regular;
+    border-bottom: 1px solid transparent;
+  }
+
+  .ui.table tfoot th {
+    background-color: transparent;
+  }
+
+  // End table styles
+
+  .column.compact, .row.compact {
+    padding: 0!important;
+  }
+
+  /* Placeholders on textareas */
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #c6c6c6;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #c6c6c6;
+    opacity: 1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #c6c6c6;
+    opacity: 1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #c6c6c6;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #c6c6c6;
+  }
+}
