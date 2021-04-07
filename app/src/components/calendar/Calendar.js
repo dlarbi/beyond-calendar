@@ -13,6 +13,7 @@ const BeyondCalendar = () => {
       startAccessor="start"
       endAccessor="end"
       style={{ height: 500 }}
+      views={['month']}
     />
   )
 }

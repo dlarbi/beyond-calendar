@@ -1,24 +1,33 @@
 .listingCard {
-    width: 100%;
-    margin-bottom: 5px;
-    .content {
-      display: flex;
-      * {
-        padding: 5px;
-      }
-      .image {
-        flex: 1;
-      }
-      .body {
-        flex: 2;
-      }
-      .metrics {
-        flex: 1;
-        text-align: center;
-        .metric {
-          font-size: 24px;
-          padding: 15%;
-        }
+  width: 100%;
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  .content {
+    display: flex;
+    .image {
+      flex: 1;
+      padding: 15px;
+    }
+    .body {
+      flex: 2;
+      padding: 35px 0px;
+      .title {
+        margin: 0 0 10px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
+    .metrics {
+      flex: 1;
+      text-align: center;
+      .metric {
+        font-size: 24px;
+        padding: 15%;
+        font-weight: bolder;
+      }
+    }
+  }
 }

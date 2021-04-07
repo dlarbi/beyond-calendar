@@ -1,8 +1,9 @@
 import BeyondCalendar from './../../components/calendar/Calendar';
+import styles from './ListingContainer.module.scss';
 
 const ListingContainer = () => {
   return (
-    <div className="listing-container">
+    <div className={styles.listingContainer}>
       <BeyondCalendar />
     </div>
   )

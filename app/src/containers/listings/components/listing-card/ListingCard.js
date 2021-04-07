@@ -3,7 +3,6 @@ import styles from './ListingCard.module.scss';
 import Utils from './../../../../utils/utils';
 
 const ListingCard = ({ listing }) => {
-  console.log(listing)
   return (
     <div className={styles.listingCard}>
       <Link href={`/listing/${listing.id}`}>
@@ -12,8 +11,8 @@ const ListingCard = ({ listing }) => {
             <img src={listing.picture} width="100%" />
           </div>
           <div className={styles.body}>
-            <h3>{listing.title}</h3>
-            <span>{listing.beds}</span>
+            <h3 className={styles.title}>{listing.title}</h3>
+            <span>{listing.beds} Beds</span>
           </div>
           <div className={styles.metrics}>
             <div className={styles.metric}>
