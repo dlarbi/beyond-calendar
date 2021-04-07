@@ -1,17 +1,24 @@
 .listingCard {
     width: 100%;
-    padding: 15px;
     margin-bottom: 5px;
-    .listingCardContent {
+    .content {
       display: flex;
-      .listingCardImage {
+      * {
+        padding: 5px;
+      }
+      .image {
         flex: 1;
       }
-      .listingCardBody {
-        flex: 1;
+      .body {
+        flex: 2;
       }
-      .listingCardData {
+      .metrics {
         flex: 1;
+        text-align: center;
+        .metric {
+          font-size: 24px;
+          padding: 15%;
+        }
       }
     }
 }

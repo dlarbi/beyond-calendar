@@ -2,7 +2,6 @@ import Link from 'next/link'
 import ListingCard from './components/listing-card/ListingCard';
 
 const ListingsContainer = ({ listings }) => {
-  console.log(listings)
   return (
     <div className="listings-container">
       {listings && listings.map(listing =>
