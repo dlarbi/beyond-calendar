@@ -2,12 +2,20 @@
 @import './_variables';
 
 
-// TODO: Define global font-faces, e.g.:
-// @font-face {
-//   font-family: 'Halcom';
-//   src: url('./fonts/The Northern Block Ltd - Halcom.otf');
-// }
+// TODO: Define/use global font-faces, e.g.:
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url('./../static/fonts/SourceSansPro-Regular.otf');
+}
 
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: url('./../static/fonts/SourceSansPro-Bold.otf');
+}
+
+* {
+  font-family: 'SourceSansPro-Regular';
+}
 
 :global {
 
@@ -19,17 +27,24 @@
     float: right;
   }
 
+  h3 {
+    color: $darkest-grey;
+    letter-spacing: .5px;
+    font-family: 'SourceSansPro-Bold';
+    font-size: 14px;
+  }
+
   h5 {
     color: $darkest-grey;
     letter-spacing: .5px;
-    font-family: Halcom-bold;
+    font-family: 'SourceSansPro-Bold';
     font-size: 14px;
     margin-bottom: 8px!important;
   }
 
   h6 {
     color: $darkest-grey;
-    font-family: Halcom;
+    font-family: 'SourceSansPro-Bold';
     font-size: 12px;
     margin: 20px 0 10px 0;
   }

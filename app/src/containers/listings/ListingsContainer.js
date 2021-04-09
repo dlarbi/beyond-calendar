@@ -8,7 +8,6 @@ import styles from './ListingsContainer.module.scss';
 // Refactor to remove a redundant-seeming layer of components
 const ListingsContainer = () => {
   const [listings, setListings] = useRecoilState(listingsState);
-
   return (
     <div className={styles.listingsContainer}>
       {listings && listings.map(listing =>
