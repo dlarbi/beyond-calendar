@@ -2,7 +2,7 @@
 `cd app`
 `cd src`
 `npm install`
-`cd npm start`
+`npm start`
 visit http://localhost:3000
 
 
