@@ -24,7 +24,9 @@ const ListingContainer = ({ view }) => {
     const updatedListing = _.clone(listing);
     updatedListing.basePrice = parseInt(val, 10);
     try {
-      const response = await listingsApi.updateListing(updatedListing)
+      // NOTE: Comment out line 28/29 to successfully see state management on the Calendar
+      // This API call fails for unknown reasons thus far.
+      const response = await listingsApi.updateListing(updatedListing);
       const responseJson = await response.json();
       setListing(updatedListing)
     } catch (e) {

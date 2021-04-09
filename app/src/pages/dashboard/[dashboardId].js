@@ -39,6 +39,14 @@ export async function getStaticProps({ params }) {
     return { props: { initialRecoilState } }
   } catch (e) {
     console.log(e);
+    return {
+      props: {
+        error: {
+          statusCode: 500,
+          message: `${Constants.ErrorMessages.FetchListingData}: ${e}`
+        }
+      }
+    }
     // TODO: Redirect to 404?
   }
 }

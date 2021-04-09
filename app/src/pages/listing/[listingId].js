@@ -41,7 +41,14 @@ export async function getServerSideProps(context) {
     return { props: { initialRecoilState } };
   } catch (e) {
     console.log(e);
-    // TODO: Redirect to 404?
+    return {
+      props: {
+        error: {
+          statusCode: 500,
+          message: `${Constants.ErrorMessages.FetchListingData}: ${e}`
+        }
+      }
+    }
   }
 }
 

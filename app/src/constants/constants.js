@@ -16,7 +16,7 @@ export default {
     },
     FetchFailure: {
       title: 'Failed to fetch data',
-      message: `Your request failed. Please try again, or view your console for details. (Also see: src/api/listings)`,
+      message: `Your request failed. Please try again, or view your console for details. (Also see code doc in: src/api/listings)`,
       buttons: [
         {
           label: 'Continue',
@@ -24,5 +24,8 @@ export default {
         }
       ]
     }
+  },
+  ErrorMessages: {
+    FetchListingData: 'There was an error fetching listing data.'
   }
 }

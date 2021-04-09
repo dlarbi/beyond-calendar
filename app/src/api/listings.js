@@ -19,7 +19,8 @@ const updateListing = async (listing) => {
     url: `${config.apiBaseUrl}/calendar/${listing.id}`,
     body: JSON.stringify({
       basePrice: listing.basePrice
-    })
+    }),
+    contentType: 'application/json'
   });
 
   return res.json();
