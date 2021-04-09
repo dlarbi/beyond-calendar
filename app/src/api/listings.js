@@ -10,6 +10,9 @@ const fetchListing = async (listingId) => {
   return res.json();
 };
 
+// The update method is throwing an exception when calling `await result.json()` on the response from our
+// `fetch()` request. Unsure if this is a problem in my code or in the response.
+// I will hardcode a response, but leave the error handling which will display in the case this POST request fails.  Or maybe I'll figure out root cause here soon :)
 const updateListing = async (listing) => {
   const res = await fetch({
     method: 'POST',
@@ -18,10 +21,12 @@ const updateListing = async (listing) => {
       basePrice: listing.basePrice
     })
   });
+
   return res.json();
 }
 
 export default {
   fetchListings,
-  fetchListing
+  fetchListing,
+  updateListing
 }

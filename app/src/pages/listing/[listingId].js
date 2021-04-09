@@ -27,17 +27,22 @@ const Listing = ({ initialRecoilState }) => {
 // calendar or the dashboard; however, this seems hacky & it would be preferable to persist this data across navigation.
 // Figure out how?
 export async function getServerSideProps(context) {
-  const listing = await listingsApi.fetchListing(context.query.listingId);
-  // TODO: We're applying id to the survey object so we can have a reference later usable.
-  // Talk to BE  about returning the `id` field on each `listing` object?
-  listing.id = context.query.listingId;
-  const listings = await listingsApi.fetchListings();
+  try {
+    const listing = await listingsApi.fetchListing(context.query.listingId);
+    // TODO: We're applying id to the survey object so we can have a reference later usable.
+    // Talk to BE  about returning the `id` field on each `listing` object?
+    listing.id = context.query.listingId;
+    const listings = await listingsApi.fetchListings();
 
-  const initialRecoilState = {
-      listing: listing,
-      listings: listings.listings
+    const initialRecoilState = {
+        listing: listing,
+        listings: listings.listings
+    }
+    return { props: { initialRecoilState } };
+  } catch (e) {
+    console.log(e);
+    // TODO: Redirect to 404?
   }
-  return { props: { initialRecoilState } };
 }
 
 export default Listing

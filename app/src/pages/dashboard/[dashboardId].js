@@ -30,12 +30,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const dashboardId = params.dashboardId;
-  const listings = await listingsApi.fetchListings(dashboardId);
-  const initialRecoilState = {
-      listings: listings.listings
+  try {
+    const dashboardId = params.dashboardId;
+    const listings = await listingsApi.fetchListings(dashboardId);
+    const initialRecoilState = {
+        listings: listings.listings
+    }
+    return { props: { initialRecoilState } }
+  } catch (e) {
+    console.log(e);
+    // TODO: Redirect to 404?
   }
-  return { props: { initialRecoilState } }
 }
 
 export default Dashboard
