@@ -11,17 +11,20 @@ import BasePriceInput from './components/base-price-input/BasePriceInput';
 import styles from './ListingContainer.module.scss';
 import ListingCard from './../../containers/listings/components/listing-card/ListingCard';
 import Constants from './../../constants/constants';
+
+import { Listing } from './../../types/types';
+
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-const ListingContainer = ({ view }) => {
-  const [listing, setListing] = useRecoilState(listingState);
+const ListingContainer = ({ view } : { view: string }) => {
+  const [listing, setListing] = useRecoilState<Listing>(listingState);
   const listingDetails = useRecoilValue(selectListingDetails);
 
   // Currently only supports updates to `basePrice` property
   // TODO: Move this to a module/service of some sort so its reusable.
   // Learn where this is best practice in recoil.
-  const updateListing = async (val) => {
-    const updatedListing: any = _.clone(listing);
+  const updateListing = async (val: string) => {
+    const updatedListing: Listing = _.clone(listing);
     updatedListing.basePrice = parseInt(val, 10);
     try {
       // NOTE: Comment out line 28/29 to successfully see state management on the Calendar
@@ -38,7 +41,7 @@ const ListingContainer = ({ view }) => {
   return (
     <div className={styles.listingContainer}>
       <ListingCard listing={listingDetails} />
-      <BasePriceInput listing={listing} handleChangeBasePrice={(e, val) => { updateListing(val); }} />
+      <BasePriceInput listing={listing} handleChangeBasePrice={(e: any, val: string) => { updateListing(val); }} />
       {
         view === Constants.ListingViewTypes.Calendar &&
           <Calendar listing={listing} />

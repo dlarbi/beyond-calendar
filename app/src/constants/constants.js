@@ -28,5 +28,9 @@ export default {
   },
   ErrorMessages: {
     FetchListingData: 'There was an error fetching listing data.'
+  },
+  CurrencyCodeToSymbol: {
+    USD: '$',
+    EUR: '€'
   }
 }
