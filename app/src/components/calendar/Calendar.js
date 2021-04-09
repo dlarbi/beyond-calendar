@@ -18,7 +18,10 @@ const listingToCalendarEvent = (listing) => {
     return {
         title: `Reservation ${new Date(day.date)}`,
         date: new Date(day.date),
-        price: `$${Utils.basePriceToListingDayPrice(listing.basePrice, day.factors)}`
+        price: Utils.basePriceToListingDayPrice(listing.basePrice, day.factors),
+        factors: day.factors,
+        basePrice: listing.basePrice,
+        isBlocked: day.isBlocked
     }
   })
 }
@@ -42,7 +45,7 @@ export const Calendar = ({ listing }) => {
           events={events}
           renderDay={data =>
             data.map((item, index) => (
-              <CalendarDay day={item} key={item.date}/>
+              <CalendarDay day={item} key={item.date} />
             ))
           }
         />

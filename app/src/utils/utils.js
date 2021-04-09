@@ -1,4 +1,4 @@
-const decimalToPercentage = (decimal) => {
+const decimalToPercentageValue = (decimal) => {
   return Math.floor(decimal * 100).toFixed(0);
 }
 
@@ -11,6 +11,6 @@ const basePriceToListingDayPrice = (basePrice, factors) => {
 }
 
 export default {
-  decimalToPercentage,
+  decimalToPercentageValue,
   basePriceToListingDayPrice
 };

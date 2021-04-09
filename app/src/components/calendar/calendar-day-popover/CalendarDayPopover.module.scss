@@ -1,0 +1,35 @@
+.calendarDayPopover {
+  background: #555;
+  color: #fff;
+  padding: 15px;
+  .header {
+    text-align: center;
+    width: 100%;
+    .date {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+    .price {
+      font-size: 32px;
+      color: #53babf;
+      font-weight: bolder;
+    }
+    .blocked {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  .body {
+    width: 100%;
+    table {
+      width: 100%;
+    }
+  }
+  .predictedPrice {
+    border-top: 1px solid #fff;
+    td {
+      padding-top: 3px;
+      margin-top: 3px;
+    }
+  }
+}

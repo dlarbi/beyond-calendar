@@ -7,6 +7,7 @@ import Calendar from './../../components/calendar/Calendar';
 import BasePriceInput from './components/base-price-input/BasePriceInput';
 import styles from './ListingContainer.module.scss';
 import ListingCard from './../../containers/listings/components/listing-card/ListingCard';
+import Constants from './../../constants/constants';
 
 function updateListingBasePrice(listing, val) {
   const updatedListing = _.clone(listing);
@@ -14,7 +15,7 @@ function updateListingBasePrice(listing, val) {
   return updatedListing;
 }
 
-const ListingContainer = () => {
+const ListingContainer = ({ view }) => {
   const [listing, setListing] = useRecoilState(listingState);
   const listingDetails = useRecoilValue(selectListingDetails);
 
@@ -23,7 +24,7 @@ const ListingContainer = () => {
       <ListingCard listing={listingDetails} />
       <BasePriceInput listing={listing} handleChangeBasePrice={(listing, e) => { setListing(updateListingBasePrice(listing, e)) }} />
 
-      <Calendar listing={listing} />
+      { view === Constants.ListingViewTypes.Calendar && <Calendar listing={listing} /> }
     </div>
   )
 }

@@ -16,7 +16,7 @@ const ListingCard = ({ listing }) => {
           </div>
           <div className={styles.metrics}>
             <div className={styles.metric}>
-              {Utils.decimalToPercentage(listing.health)}
+              {Utils.decimalToPercentageValue(listing.health)}
             </div>
             <div className={styles.label}>
               Health Score
