@@ -1,5 +1,6 @@
 export default {
   DefaultDashboardId: '1',
+  LogoPath: '',
   ListingViewTypes: {
     Calendar: 'calendar'
   },
