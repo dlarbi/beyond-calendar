@@ -21,7 +21,7 @@ const ListingContainer = ({ view }) => {
   // TODO: Move this to a module/service of some sort so its reusable.
   // Learn where this is best practice in recoil.
   const updateListing = async (val) => {
-    const updatedListing = _.clone(listing);
+    const updatedListing: any = _.clone(listing);
     updatedListing.basePrice = parseInt(val, 10);
     try {
       // NOTE: Comment out line 28/29 to successfully see state management on the Calendar

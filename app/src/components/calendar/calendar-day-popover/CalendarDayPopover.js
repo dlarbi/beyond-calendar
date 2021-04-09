@@ -33,7 +33,7 @@ const CalendarDayPopover = ({ day }) => {
               <td align="right">Day of week</td>
             </tr>
             <tr className={styles.predictedPrice}>
-              <td align="left">{day.price}</td>
+              <td align="left">${day.price}</td>
               <td align="right">Predicted Price</td>
             </tr>
           </tbody>
