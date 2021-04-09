@@ -1,1 +1,0 @@
-- See project readme at beyond-calendar root directory
