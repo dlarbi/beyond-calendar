@@ -1,3 +1,21 @@
 .listingContainer {
-  
+  .basePriceInputWrapper {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+
+    .basePriceLabel {
+      padding: 3px 5px;
+      background: #ddd;
+      border-radius: 2px;
+    }
+
+    .basePriceInput {
+      width: 100px;
+      padding: 3px 2px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+  }
 }

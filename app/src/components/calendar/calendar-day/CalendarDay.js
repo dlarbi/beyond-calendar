@@ -1,9 +1,9 @@
 import styles from './CalendarDay.module.scss';
 
-const CalendarDay = ({ price }) => {
+const CalendarDay = ({ day }) => {
   return (
     <div className={styles.calendarDay}>
-      {price}
+      {day.price}
     </div>
   )
 }

@@ -3,7 +3,11 @@ const decimalToPercentage = (decimal) => {
 }
 
 const basePriceToListingDayPrice = (basePrice, factors) => {
-  return basePrice + basePrice * factors.seasonal + basePrice * factors.dayOfWeek;
+  if (!basePrice) {
+    return 0;
+  }
+  return (basePrice + basePrice * factors.seasonal + basePrice * factors.dayOfWeek)
+    .toFixed(0);
 }
 
 export default {

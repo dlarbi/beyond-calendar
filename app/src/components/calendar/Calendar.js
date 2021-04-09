@@ -11,6 +11,7 @@ import {
   DefaultMonthlyEventItem,
 } from '@zach.codes/react-calendar';
 import '@zach.codes/react-calendar/dist/calendar-tailwind.css';
+import styles from './Calendar.module.scss'
 
 const listingToCalendarEvent = (listing) => {
   return listing.days.map(day => {
@@ -31,20 +32,22 @@ export const Calendar = ({ listing }) => {
   const events = listingToCalendarEvent(listing);
 
   return (
-    <MonthlyCalendar
-      currentMonth={currentMonth}
-      onCurrentMonthChange={date => setCurrentMonth(date)}
-    >
-      <MonthlyNav />
-      <MonthlyBody
-        events={events}
-        renderDay={data =>
-          data.map((item, index) => (
-            <CalendarDay price={item.price} />
-          ))
-        }
-      />
-    </MonthlyCalendar>
+    <div className={styles.beyondCalendar}>
+      <MonthlyCalendar
+        currentMonth={currentMonth}
+        onCurrentMonthChange={date => setCurrentMonth(date)}
+      >
+        <MonthlyNav />
+        <MonthlyBody
+          events={events}
+          renderDay={data =>
+            data.map((item, index) => (
+              <CalendarDay day={item} key={item.date}/>
+            ))
+          }
+        />
+      </MonthlyCalendar>
+    </div>
   );
 };
 
