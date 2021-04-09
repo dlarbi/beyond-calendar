@@ -1,6 +1,6 @@
 export default {
   DefaultDashboardId: '1',
-  LogoPath: '',
+  LogoPath: '/static/images/byp-logo.jpg',
   ListingViewTypes: {
     Calendar: 'calendar'
   },
