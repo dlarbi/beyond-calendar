@@ -12,7 +12,7 @@ const fetchListing = async (listingId) => {
 
 // The update method is throwing an exception when calling `await result.json()` on the response from our
 // `fetch()` request. Unsure if this is a problem in my code or in the response.
-// NOTE: If you comment out this API call in ListingContainer, the rest of basePrice state management is successful in the client
+// NOTE: If you comment out this API call in LOC 32 app/src/containers/listing/ListingContainer.tsx, the rest of basePrice state management is successful in the client
 const updateListing = async (listing) => {
   const res = await fetch({
     method: 'POST',
